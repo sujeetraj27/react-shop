@@ -6,6 +6,7 @@ import Zoom from 'react-reveal/Zoom';
 import formatCurrency from '../util';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../action/productActions';
+import { addToCart, removeFromCart} from '../action/cartAction';
 
 class Products extends Component {
     constructor(props) {
@@ -107,4 +108,6 @@ class Products extends Component {
 export default connect(
     (state) => ({ products: state.products.filteredItems }), {
     fetchProducts,
+    addToCart,
+    removeFromCart
 })(Products);
